@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triposr"
+version = "0.1.0"
+description = "Utilities for running the TripoSR single-image 3D reconstruction pipeline."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Stability AI" },
+    { name = "TripoSR Contributors" }
+]
+keywords = ["3d", "vision", "nerf", "diffusion"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling"
+]
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.21",
+    "omegaconf>=2.3.0",
+    "pillow>=10.1.0",
+    "einops>=0.7.0",
+    "transformers>=4.35.0",
+    "trimesh>=4.0.5",
+    "rembg>=2.0.0",
+    "huggingface-hub>=0.19.0",
+    "imageio[ffmpeg]>=2.31",
+    "xatlas>=0.0.9",
+    "moderngl>=5.10.0",
+    "torchmcubes @ git+https://github.com/tatsy/torchmcubes.git"
+]
+
+[project.optional-dependencies]
+gradio = ["gradio>=4.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/AO-StreetArt/TripoSR"
+Source = "https://github.com/AO-StreetArt/TripoSR"
+Issues = "https://github.com/AO-StreetArt/TripoSR/issues"
+
+[tool.setuptools.packages.find]
+include = ["tsr", "tsr.*"]
